@@ -4,13 +4,25 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
+    "dist": "electron-builder --win portable --publish always",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.jrobbl.auto-updater",
+    "publish": {
+      "provider": "github",
+      "owner": "jrobbl",
+      "repo": "electron-updater"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "electron": "^34.2.0"
+    "@electron-forge/publisher-github": "^7.7.0",
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-updater": "^6.3.9"
   }
 }
